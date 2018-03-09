@@ -1,0 +1,30 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package prog1;
+
+/**
+ *
+ * @author andre
+ */
+public class Estoque1 {
+
+    
+    public static void main(String[] args) {
+    
+        ProdutoModel produto1 = new ProdutoModel();
+        produto1.showProduto();
+                
+                
+        ProdutoModel produto2 = new ProdutoModel("Geladeira",5,3500);
+        produto2.showProduto();
+                
+                
+    }
+    
+
+    
+    
+}
