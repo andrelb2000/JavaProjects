@@ -25,29 +25,24 @@ public class ViewPessoaFrameInput {
     JTextField idadePessoaText = null;
     JButton carregaButton = null;
     
-    JLabel listPessoas = null;
-    
+    JLabel listPessoas = null;   
     
     // 2 - Inicializar componentes 
     public ViewPessoaFrameInput() {
         //2.1 - Criar o Frame
         pessoaJFrame = new JFrame("Dados de Pessoa");
         //2.2 - Dar o tamanho
-        pessoaJFrame.setSize(400, 100);
-        
+        pessoaJFrame.setSize(400, 100);        
         //2.3 - Colocar o Layout
         pessoaJFrame.setLayout(new FlowLayout());
         //2.4 - Indicar o que fazer ao fechar
-        pessoaJFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        
+        pessoaJFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);       
         //2.5 - Criar os componentes
         nomeLabel = new JLabel("Nome:");
         nomePessoaText = new JTextField(10);
-        
                
         idadeLabel = new JLabel("A idade é:");
         idadePessoaText = new JTextField(3);
-        
        
         carregaButton = new JButton("Carrega");
         

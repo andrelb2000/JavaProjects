@@ -17,12 +17,9 @@ import java.awt.event.ActionListener;
 
 
 public class ControlerFrame {
-    
     //1 - Declarar o modelo e views no controler
     private PessoaModel pm = null;
     private ViewPessoaFrameInput pvi = null;
-   
-    
     //2 - Declarar o manipulador de eventos
     private class ManipuladorEventos implements ActionListener{
 
@@ -36,12 +33,9 @@ public class ControlerFrame {
     //3 - Criar o metodo principal para ligar o modelo e as views
     public void showPessoa(){
         //3.1 - Criar Modelo
-        pm = new PessoaModel("Darth Vader", 123);
-        
+        pm = new PessoaModel("Darth Vader", 123); 
         //3.2 - Criar Views
         pvi = new ViewPessoaFrameInput();
-
-        
         //3.3 - Adicionar Manipulador as views
         pvi.inicializarManipulador(new ManipuladorEventos());
         
