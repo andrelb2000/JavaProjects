@@ -6,6 +6,7 @@
 package aula8ex1_paint;
 
 import java.awt.Graphics;
+import javax.swing.DefaultListModel;
 
 /**
  *
@@ -15,8 +16,10 @@ public class TelaJPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form TelaJPanel
+     * @param lista
      */
-    public TelaJPanel() {
+    public TelaJPanel(DefaultListModel<Veiculo> lista) {
+        listaVeiculos = lista;
         initComponents();
     }
 
@@ -41,13 +44,14 @@ public class TelaJPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private DefaultListModel<Veiculo> listaVeiculos;
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g); //To change body of generated methods, choose Tools | Templates.
-        
-        g.
-        
-        
+        for(int i=0; i < listaVeiculos.getSize(); i++){
+            Veiculo v = listaVeiculos.get(i);
+            v.desenha(g);            
+        }      
     }
 
 
