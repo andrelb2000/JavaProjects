@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        
+        <script type="text/javascript" >
+            var listaFunc = [];   
+            var listaIdadeFunc = [];
+            var listaSalFunc = [];           
+            
+            function novoFuncionario() {
+                   var funcName = document.getElementById("NomeFuncionario").value;
+                   listaFunc.push(funcName);                   
+                   var funcIdade = document.getElementById("IdadeFuncionario").value;
+                   listaIdadeFunc.push(funcIdade);                   
+                   var funcSal = document.getElementById("SalFuncionario").value;
+                   listaSalFunc.push(funcSal);
+            }
+            function calculaMedia(){
+                var mediaSalarios = 0;
+                for(var j=0 ; j < listaSalFunc.length ; j++)    {
+                    mediaSalarios += Number(listaSalFunc[j]);
+                }
+                mediaSalarios /= listaSalFunc.length;
+                return mediaSalarios;
+            }
+            function listaFuncionarios() {
+                for(var i=0 ; i < listaFunc.length ; i++)    {
+                    document.writeln("Funcionario "+i+ " ==> " + listaFunc[i] + " " +
+                                         listaIdadeFunc[i] + 
+                                 " R$ " +listaSalFunc[i]+  "<br/>");
+                }                
+                document.writeln("Media Salarios  R$ "+ calculaMedia() +  "<br/> " );                            
+            }
+
+            function listaFuncionariosTabela() {
+                document.write("<table border=1 ><thead><tr>" +
+                 "<th>#</th> <th>Funcionario</th>  <th>Idade</th> <th> Salario </th>"+
+                 "</tr> </thead>");
+                for(var i=0 ; i < listaFunc.length ; i++)    {
+                    document.write("<tr>" +
+                            "<td>"   +  i                + "</td>" +
+                            "<td>"   + listaFunc[i]      + "</td>" +
+                            "<td>"   + listaIdadeFunc[i] + "</td>" +
+                            "<td>R$ "+ listaSalFunc[i]   + "</td>" +
+                            "</tr>");
+                }                
+                document.write("<tr>" + "<td> </td>"+ "<td>Media:</td>"+ "<td></td>" + 
+                                       "<td> R$" + calculaMedia() +  "</td>"+ 
+                               "</tr> </table>");                
+            }
+        
+        
+        
+        </script>                 
+
+        Funcionario: <input type="text" id="NomeFuncionario" value="Joao da silva" />  <br/>   
+        Idade:       <input type="text" id="IdadeFuncionario" value="35"  />     <br/>   
+        Salario:     <input type="text" id="SalFuncionario"   value="10000"  />  <br/>   
+                
+        <input type="button" value="Insere Funcionario" onclick="novoFuncionario()" />  <br/>
+        <input type="button" value="Mostra Lista" onclick="listaFuncionarios()" />      <br/>
+        <input type="button" value="Mostra Tabela" onclick="listaFuncionariosTabela()()" />      <br/>
+    </body>
+</html>

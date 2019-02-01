@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Java Script Exemplo 4</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        
+        <script type="text/javascript" >
+            var listaFunc = [];                      
+            function novoFuncionario() {
+                   var funcName = document.getElementById("NomeFuncionario").value;
+                   listaFunc.push(funcName);
+            }
+            function listaFuncionarios() {
+                for(var i=0 ; i < listaFunc.length ; i++)    {
+                    document.writeln("Funcionario "+i+ " ==> " + listaFunc[i] + "<br/>");
+                }
+            }
+        </script>                 
+        Funcionario: <input type="text" id="NomeFuncionario" value="Joao da silva"  />  <br/>        
+        <input type="button" value="Insere Funcionario" onclick="novoFuncionario()" />  <br/>
+        <input type="button" value="Mostra Lista" onclick="listaFuncionarios()" />      <br/>
+        
+        
+    </body>
+</html>

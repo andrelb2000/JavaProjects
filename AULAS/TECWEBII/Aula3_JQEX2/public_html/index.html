@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script src="js/libs/jquery/jquery.min.js"> </script>
+        <script type="text/javascript" >
+            var listaFunc = [];                                              
+            $(document).ready(function() {
+                $("#btins").click(function() {
+                   var funcName = $("#NomeFuncionario").val();                           
+                   listaFunc.push(funcName);    
+                });
+                $("#butlist").click(function() {
+                    var htmlista = "<h1> Lista Funcionarios </hi><br/> <h3>"; 
+                    for(var i=0 ; i < listaFunc.length ; i++)    {
+                        htmlista += "Funcionario "+i+ " ==> " + listaFunc[i] + "<br/>"                        
+                    }    
+                    $("#listaFunc").html(htmlista + "</h3>");                    
+                });
+            });
+        </script>                 
+        Funcionario: <input type="text" id="NomeFuncionario" value="Joao da silva" /> <br/>        
+        <input id="btins"   type="button" value="Insere Funcionario" />  <br/>
+        <input id="butlist" type="button" value="Mostra Lista" />      <br/>
+        <p id="listaFunc"> Lista Funcionarios </p>        
+    </body>
+</html>
