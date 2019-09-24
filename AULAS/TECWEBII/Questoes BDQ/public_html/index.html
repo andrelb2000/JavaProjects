@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript">
+            function primo(num){
+                var achei = true;
+                for(var i=2 ; i < num ; i++){
+                    if((num%i)==0){
+                        achei = false;
+                    }
+                }
+                return achei;                
+            }
+            function ListaPrimo(inicio,fim){            
+                for(var i=inicio ; i < fim; i++){
+                   var achei = true;
+                   for(var j=2 ; j < i ; j++){
+                        if((i%j)==0){
+                            achei = false;
+                        }
+                   }
+                   if(achei){
+                       document.write("Primo: "+i + "</br>");
+                   }                     
+                }               
+            }          
+            function obtemFaixa(inicio,fim){
+                var achou = false;
+                var resultadoLido = 0;
+                while(!achou){
+                    resultadoLido = prompt("Digite o numero","");
+                    if ( (resultadoLido >= inicio) && 
+                         (resultadoLido <= fim)){
+                         achou = true;                     
+                    }
+                }
+                return resultadoLido;
+            }
+            function fatorial(num){
+                var x = 1;
+                for(var i=1 ; i <= num ; i++){
+                    x = x * i;
+                }
+                return x;
+            }   
+            
+            function fatLista(num){
+		var listaFat = [];
+                var x = 1;
+                for(var i=1 ; i <= num ; i++){
+                    x = x * i;
+                    listaFat.push(x);
+                }
+                return listaFat;
+            } 
+            function listaFatorial(num){
+                for(var i = 1 ; i<= num; i++){
+                    var x = 1;
+                    for(var j=2 ; j <= i ; j++){
+                        x = x * j;
+                    }
+                    document.write(" - "+x);
+                }
+            }
+            function diagonal(num,n){
+                for(var x=0 ; x < n ; x++ ){
+                    for (var y = 0; y < n; y++) {
+                       if(x==y){
+                           document.write("("+num+")");
+                       }else{
+                           document.write("(X)");
+                       }   
+                    }
+                    document.write("</br>");
+                }
+            }    
+            function Retangulo(num,n,m,X){
+                for(var x=0 ; x < n ; x++ ){
+                    for (var y = 0; y < m; y++) {
+                       if(x==y){
+                           document.write("("+num+")");
+                       }else{
+                           document.write("("+X+")");
+                       }   
+                    }
+                    document.write("</br>");
+                }
+            }            
+            function multiplica(a,b){
+                if(b==1){
+                    return a;
+                }else{
+                    return a + multiplica(a,b-1)
+                }
+            }            
+            function fibonacci(n){
+                if(n==0){
+                    return(0);
+                }else{
+                    if(n==1){
+                        return(1);
+                    }else{
+                        n1 = fibonacci(n-1);
+                        n2 = fibonacci(n-2);
+                        return n1 + n2;
+                    }
+                }                
+            }
+            function potencia(a,n){
+                if(n==0){
+                    return(1);
+                }else{
+                    return a * potencia(n-1);
+                }    
+            }
+            function achaMaximo(x,n,vet){
+                if(n==0){
+                    return x;                    
+                }else{
+                    y = vet[n];
+                    if(y>x){
+                        return(achaMaximo(y,n-1,vet));
+                    }else{
+                        return(achaMaximo(x,n-1,vet));
+                    }
+                }                
+            }         
+            function achaMinimmo(x,n,vet){
+                if(n==0){
+                    return x;                    
+                }else{
+                    y = vet[n];
+                    if(y < x){
+                        return(achaMaximo(y,n-1,vet));
+                    }else{
+                        return(achaMaximo(x,n-1,vet));
+                    }
+                }  
+            }          
+            function insereFim(lista,no){
+                if(lista.proximo == null){
+                    lista.proximo = no;
+                    no.proximo = null;
+                    
+                }else{
+                    insereFim(lista.proximo,no);
+                }                
+            }
+            function contaLista(lista){
+                if(lista.proximo == null){
+                    return 1;                    
+                }else{
+                     return 1 + contaLista(lista.proximo)
+                }                
+            }
+            function insereOrdem(no){
+                
+            }
+            
+        
+            
+        </script>
+        
+        
+        
+    </head>
+    <body>
+        <div>Exercicios BDQ</div>
+        <script type="text/javascript">
+            document.writeln(primo(37));
+            ListaPrimo(-4,3);
+            var res = obtemFaixa(3,13);
+            document.writeln(fatorial(res)+"</br>");
+            
+            document.writeln(fatorial(5)+" - a</br>");
+            document.writeln(fatorial(-5)+" - b</br>");
+            diagonal(7,10);
+            Retangulo(8,4,7,0);
+            listaFatorial(-5);
+            Retangulo(0,3,4,11);
+            document.writeln(fatLista(10));
+            
+     
+            
+            
+        </script>
+        
+        
+        
+        
+        
+        
+        
+        
+    </body>
+</html>

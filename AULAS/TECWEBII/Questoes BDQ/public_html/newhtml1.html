@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+<form action="http://www.estacio.br/cadastra" method="get">
+    <label>Aluno:     <input type="text" name="aluno"></label> </br>
+    <label>Matricula: <input type="text" name="aluno"></label> </br>
+    <input type="checkbox" id="fies" name="fies"> <label for="fies">FIES</label> </br>
+    <input type="text" name="curso" list="nomecursos">
+
+    <datalist id="nomecursos">
+      <option value="Medicina ">
+      <option value="Direito ">
+      <option value="Engenharia">
+    </datalist>
+    </br>
+    
+    <p>Digite seus comentários abaixo:
+       <textarea cols="80" rols="30" name="comentarios"></textarea>
+    </p>
+    <button type="submit" value="submit">submit</button>
+</form>
+    </body>
+</html>
